@@ -33,6 +33,7 @@ const pushBtn = document.getElementById("push-btn");
 const unshiftBtn = document.getElementById("unshift-btn");
 const popBtn = document.getElementById("pop-btn");
 const shiftBtn = document.getElementById("shift-btn");
+const randomBtn = document.getElementById("random-btn");
 let myEmojis = [];
 
 //check for emojis in local storage, if they're there, show them, if not, get some random emojis
@@ -58,6 +59,10 @@ popBtn.addEventListener("click", function () {
 
 shiftBtn.addEventListener("click", function () {
   modifyEmojis("shift");
+});
+
+randomBtn.addEventListener("click", function () {
+  getRandomEmojis();
 });
 
 function renderEmojis() {

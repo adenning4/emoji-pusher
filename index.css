@@ -28,6 +28,16 @@ body {
   background-color: #e23349;
 }
 
+#random-btn {
+  background: rgb(0, 172, 40);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 172, 40, 1) 0%,
+    rgba(0, 25, 135, 1) 50%,
+    rgba(0, 172, 40, 1) 100%
+  );
+}
+
 h1 {
   letter-spacing: 2px;
   text-align: center;
