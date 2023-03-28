@@ -39,23 +39,20 @@ function modifyEmojis(command, emoji) {
       if (emoji) {
         myEmojis.push(emojiInput.value);
         emojiInput.value = "";
-        renderEmojis();
       }
       break;
     case "unshift":
       if (emoji) {
         myEmojis.unshift(emojiInput.value);
         emojiInput.value = "";
-        renderEmojis();
       }
       break;
     case "pop":
       myEmojis.pop();
-      renderEmojis();
       break;
     case "shift":
       myEmojis.shift();
-      renderEmojis();
       break;
   }
+  renderEmojis();
 }
