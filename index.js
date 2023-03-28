@@ -18,29 +18,44 @@ function renderEmojis() {
 renderEmojis();
 
 pushBtn.addEventListener("click", function () {
-  if (emojiInput.value) {
-    myEmojis.push(emojiInput.value);
-    emojiInput.value = "";
-    renderEmojis();
-  }
+  modifyEmojis("push", emojiInput.value);
 });
 
 unshiftBtn.addEventListener("click", function () {
-  if (emojiInput.value) {
-    myEmojis.unshift(emojiInput.value);
-    emojiInput.value = "";
-    renderEmojis();
-  }
+  modifyEmojis("unshift", emojiInput.value);
 });
 
 popBtn.addEventListener("click", function () {
-  myEmojis.pop();
-  renderEmojis();
+  modifyEmojis("pop");
 });
 
 shiftBtn.addEventListener("click", function () {
-  myEmojis.shift();
-  renderEmojis();
+  modifyEmojis("shift");
 });
 
-//
+function modifyEmojis(command, emoji) {
+  switch (command) {
+    case "push":
+      if (emoji) {
+        myEmojis.push(emojiInput.value);
+        emojiInput.value = "";
+        renderEmojis();
+      }
+      break;
+    case "unshift":
+      if (emoji) {
+        myEmojis.unshift(emojiInput.value);
+        emojiInput.value = "";
+        renderEmojis();
+      }
+      break;
+    case "pop":
+      myEmojis.pop();
+      renderEmojis();
+      break;
+    case "shift":
+      myEmojis.shift();
+      renderEmojis();
+      break;
+  }
+}
